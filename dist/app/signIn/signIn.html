@@ -1,0 +1,14 @@
+<form name="logform" class="auth" ng-submit="signInCtrl.openChat()">
+	<h2>authorization</h2>
+	<fieldset id="inputs">
+		<input type="email" name="email" autofocus placeholder="email" required enter-click="signInCtrl.openChat()" ng-model="signInCtrl.email">   
+		<input type="password" name="password" placeholder="password" required enter-click="signInCtrl.openChat()" ng-model="signInCtrl.password">
+	</fieldset>
+	<div class="error">
+		<span ng-show="signInCtrl.error">{{signInCtrl.error}}</span>
+	</div>
+	<fieldset id="actions">
+		<input type="submit" id="submit" value="Sign in">
+		<a class="btn btn-success" ui-sref="register" role="button">Registration</a>
+	</fieldset>
+</form>

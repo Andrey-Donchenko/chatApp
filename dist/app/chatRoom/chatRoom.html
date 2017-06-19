@@ -1,0 +1,17 @@
+<div class="row article">
+	<div class="col-sm-8 col-sm-offset-2">
+		<div class="chat">
+			<div class="msg" ng-class="{'msg-active': msg.author === chatRoomCtrl.user.email}" ng-repeat="msg in chatRoomCtrl.data">
+				<div>
+					<span class="author">{{msg.author}}</span>
+					<span class="time">{{msg.time | date : "HH:mm / dd MMM"}}</span>
+				</div>
+				<div class="content">{{msg.content}}</div>
+			</div>
+		</div>
+		<new-message user="chatRoomCtrl.user" scroll="chatRoomCtrl.scroll"></new-message>
+	</div>
+	<div class="col-sm-2">
+		<sign-out></sign-out>
+	</div>
+</div>

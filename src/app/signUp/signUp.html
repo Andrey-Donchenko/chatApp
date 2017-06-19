@@ -1,0 +1,15 @@
+<form name="regform" class="auth" ng-submit="signUpCtrl.openChat()">
+	<h2>registration</h2>
+	<fieldset id="inputs">
+		<input type="email" name="email" autofocus placeholder="email" required enter-click="signUpCtrl.openChat()" ng-model="signUpCtrl.email" ng-change="signUpCtrl.error=false">   
+		<input type="password" name="password" placeholder="password" required enter-click="signUpCtrl.openChat()" ng-model="signUpCtrl.password" ng-change="signUpCtrl.error=false">
+		<input type="password" name="confirm" placeholder="password confirmation" required enter-click="signUpCtrl.openChat()" ng-model="signUpCtrl.confirm" ng-change="signUpCtrl.error=false">
+	</fieldset>
+	<div class="error">
+		<span ng-show="signUpCtrl.error">{{signUpCtrl.error}}</span>
+		<span ng-show="regform.password.$dirty && regform.confirm.$dirty && signUpCtrl.checkValid()">Passwords don't match!</span>
+	</div>
+	<fieldset id="actions">
+		<input type="submit" id="submit" value="Sign up">
+	</fieldset>
+</form>
